@@ -51,6 +51,11 @@ span {
   color: #fff;
   text-decoration: none;
   font-weight: bold;
+  font-family: cursive;
+}
+
+.nav-links li a:hover {
+  color: #C2F5D9;
 }
 
 nav ul {
@@ -107,4 +112,40 @@ h2 {
     font-family: "Permanent Marker", cursive;
     color: #98FF98;
     font-size: 3.5rem;
+}
+
+.testimonial {
+  display: flex;
+  overflow-x: auto;
+  padding: 20px 0;
+  gap: 20px;
+}
+
+.testimonial-card {
+  background: rgb(255, 255, 255, 0.9);
+  border-radius: 15px;
+  padding: 25px;
+  min-width: 300px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  border-left: 5px solid #89CFF0;
+}
+
+.testimonial-card:hover {
+  transform: translateY(-5px);
+  transition: 0.3s ease;
+}
+
+.quote {
+  font-family: "Alex Brush", cursive;
+  font-size: 1.5rem;
+  color: #333;
+}
+
+.user-pic {
+  width: 50px;
+  border-radius: 50%;
+}
+
+.user-name {
+  font-size: 1.5rem;
 }
