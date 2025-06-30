@@ -11,6 +11,9 @@
 <body>
     <nav class="navbar">
         <h1>Estino <span>Beauty</span></h1>
+        <div class="hamburger" id="hamburger">
+            ☰
+        </div>
         <ul class="nav-links" id="navLinks">
             <li><a href="#home">Home</a></li>
             <li><a href="#about">About</a></li>
@@ -22,14 +25,17 @@
         <div class="main-container">
             <h2>
                 Welcome to <span class="brand-name">Estino Beauty World</span>, where we believe that great hair can change your life. 
-                Our team of expert stylists are dedicated to providing personalized service and exceptional results. Let us help you achieve the look you've always wanted.
+                Our team of expert stylists are dedicated to providing personalized service and exceptional results. 
+                Let us help you achieve the look you've always wanted.
             </h2>
         </div>
     </section>
 
     <section class="testimonial">
+        <h2 class="testimonial-heading">Client reviews</h2>
+        <div class="carousel" id="carousel">
         <div class="testimonial-card">
-            <p class="quote">"This changed my life! The team was incredible.</p>
+            <p class="quote">"This changed my life! The team was incredible."</p>
             <div class="author">
                 <img src="/hair-pics/User1.jpg" alt="User" class="user-pic">
                 <span class="user-name"> Miss Blessing</span>
@@ -67,6 +73,10 @@
                 <span class="user-name">Jummy</span>
             </div>
         </div>
+        </div>
+
+        <button class="arrow left" id="prev">&#10094;</button>
+        <button class="arrow right" id="next">&#10095;</button>
     </section>
 
     <script src="index.js"></script>
