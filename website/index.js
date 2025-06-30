@@ -87,6 +87,32 @@ prevBtn.addEventListener("click", () => {
   prevBtn();
 });
 
+// Swipe support
+let touchStartX = 0;
+let touchEndX = 0;
+
+carousel.addEventListener("toushstart", (e) => {
+  touchStartX = e.changedTouches[0].screenX;
+});
+
+carousel.addEventListener("touchend", (e) => {
+  touchEndX = e.changedTouches[0].screenX;
+  handleSwipe();
+});
+
+function handleSwipe() {
+  const swipeDistance = touchEndX - touchStartX;
+  const threshold = 50; //Minimum swipe distanse
+
+  if (swipeDistance > threshold) {
+    //Swipe right previous
+    prevSlide();
+  } else if (swipeDistance < -threshold) {
+    //Swipe left next
+    nextSlide();
+  }
+}
+
 // Initialize
 showSlide(currentIndex);
 startAutoSlide();

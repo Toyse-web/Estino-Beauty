@@ -193,10 +193,12 @@ h2 {
   font-family: "Alex Brush", cursive;
   font-size: 1.5rem;
   color: #333;
-  margin-top: -50px;
+  margin-top: -70px;
 }
 
 .user-pic {
+  margin-left: 300px;
+  margin-top: 20px;
   width: 50px;
   border-radius: 50%;
 }
@@ -205,7 +207,7 @@ h2 {
   font-size: 1.5rem;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 600px) {
   *{
     margin: 0;
     padding: 0;
@@ -278,16 +280,15 @@ h2 {
   margin-left: 10px;
 }
 
-.testimonial {
-  min-height: 300px;
-  display: grid;
-  opacity: 0;
-  transform: translateY(50px);
-  transition: all 0.6s ease-out;
+.quote {
+  font-size: 1.5rem;
 }
 
-.testimonial.show {
-  opacity: 1;
-  transform: translateY(0);
+.user-name {
+  font-size: 0.95rem;
+}
+
+.arrow {
+  font-size: 18px;
 }
 }
