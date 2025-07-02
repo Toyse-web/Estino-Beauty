@@ -23,9 +23,7 @@ span {
 }
 
 .navbar {
-  /* display: flex; */
   justify-content: space-between;
-  /* align-items: center; */
   padding: 0px 20px;
   height: 80px;
   width: 100%;
@@ -40,6 +38,7 @@ span {
   color: white;
   cursor: pointer;
   display: none; /* Shown on small screens */
+  max-width: 1000px;
 }
 
 .navbar.scrolled {
@@ -207,6 +206,135 @@ h2 {
   font-size: 1.5rem;
 }
 
+.cta-section {
+  background: linear-gradient(135deg, #50a550, #FF99CC);
+  text-align: center;
+  padding: 60px 20px;
+  border-radius: 20px;
+  margin: 80px auto;
+  max-width: 900px;
+  color: white;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+.cta-heading {
+  font-size: 2.2rem;
+  margin-bottom: 15px;
+}
+
+.cta-text {
+  font-size: 1.1rem;
+  margin-bottom: 30px;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.cta-btn {
+  background: white;
+  color: #f85c70;
+  padding: 14px 28px;
+  font-size: 1rem;
+  font-weight: bold;
+  border-radius: 30px;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.cta-btn:hover {
+  background: #fff3f4;
+  transform: scale(1.05);
+}
+
+.contact-info {
+  padding: 60px 20px;
+  background: #f9f9f9;
+  text-align: center;
+  border-radius: 16px;
+  margin: 80px auto;
+  max-width: 1000px;
+}
+
+.contact-heading {
+  font-size: 2rem;
+  margin-bottom: 10px;
+  color: #222;
+}
+
+.cnt-text {
+  font-size: 1.1rem;
+  color: #555;
+  margin-bottom: 40px;
+}
+
+.contact-grid {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  flex-wrap: wrap;
+  margin-bottom: 30px;
+}
+
+.contact-card {
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+  padding: 20px 30px;
+  width: 260px;
+}
+
+.contact-card h3 {
+  font-size: 1.1rem;
+  color: #f85c70;
+  margin-bottom: 10px;
+}
+
+.contact-card p {
+  color: #333;
+  font-size: 1rem;
+  margin: 0;
+}
+
+.contact-btn {
+  display: inline-block;
+  background-color: #f85c70;
+  color: #fff;
+  padding: 12px 24px;
+  border-radius: 30px;
+  font-weight: bold;
+  transition: background 0.3s ease;
+}
+
+.contact-btn.whatsapp {
+  background-color: #25d366;
+  color: white;
+}
+
+.contact-btn.whatsapp:hover {
+  background-color: #1ebd5a;
+}
+
+.map-sect {
+  padding: 50px 20px;
+  text-align: center;
+  background: #ffffff;
+  margin: 0  auto;
+  max-width: 1000px;
+}
+
+.map-head {
+  font-size: 1.6rem;
+  margin-bottom: 20px;
+  color: #222;
+}
+
+.map-container {
+  width: 100%;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+}
+
 @media (max-width: 768px) {
   *{
     margin: 0;
@@ -246,6 +374,10 @@ h2 {
   padding: 10px 0;
   margin: 0;
   font-size: 20px;
+}
+
+.nav-links.active {
+  left: 0;
 }
 
 .nav-links li a{

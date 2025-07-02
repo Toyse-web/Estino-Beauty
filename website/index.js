@@ -84,7 +84,7 @@ nextBtn.addEventListener("click", () => {
 });
 
 prevBtn.addEventListener("click", () => {
-  prevBtn();
+  prevSlide();
 });
 
 // Swipe support
