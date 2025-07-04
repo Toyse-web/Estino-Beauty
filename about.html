@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us</title>
+</head>
+<style>
+    body {
+        font-family: 'Segoe UI', sans-serif;
+        margin: 0;
+        padding: 0;
+        line-height: 1.6;
+        background-color: #fff;
+        color: #333;
+    }
+
+    .navbar {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        background: transparent;
+        width: 100%;
+        color: white;
+        height: 90px;
+        position: fixed;
+        top: 0;
+        z-index: 999;
+    }
+
+    .navbar.scrolled {
+        background-color: #98FF98;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    }
+
+    .head {
+        margin-left: 20px;
+        font-family: 'Alex Brush', cursive;
+        color: #fff;
+        font-size: 2rem;
+    }
+
+    .head span {
+        color: #fff9f9;
+        font-size: 2.5rem;
+        font-family: "Permanent Marker", cursive;
+        font-weight: bold;
+        font-style: italic;
+        margin-left: -10px;
+    }
+
+    .nav-links {
+        list-style: none;
+        display: flex;
+        gap: 24px;
+    }
+
+    .nav-links li {
+        transition: 0.3s ease;
+    }
+
+    .nav-links a {
+        color: white;
+        text-decoration: none;
+        font-weight: 500;
+        transition: 0.3s ease;
+    }
+
+    .nav-links a:hover {
+        color: green;
+    }
+
+    .hamburger {
+        font-size: 1.8rem;
+        cursor: pointer;
+        display: none;
+        user-select: none;
+    }
+
+    @media (max-width: 768px) {
+        .hamburger {
+            display: block;
+        }
+
+        .nav-links {
+            position: absolute;
+            top: 70px;
+            right: 0;
+            background-color: #256925;
+            flex-direction: column;
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.4s ease;
+        }
+
+        .nav-links.show {
+            max-height: 300px;
+            padding: 12px 0;
+        }
+
+        .nav-links li {
+            text-align: center;
+            padding: 10px 0;
+        }
+    }
+
+    .about-hero {
+        background: linear-gradient(135deg, #50a550, #FF99CC);
+        color: white;
+        height: 300px;
+        padding: 80px 20px;
+        text-align: center;
+    }
+
+    .about-hero h1 {
+        font-size: 2.8rem;
+        margin-bottom: 10px;
+    }
+
+    .about-hero p {
+        font-size: 1.2rem;
+        max-width: 600px;
+        margin: 0 auto;
+    }
+
+    .about-content {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 40px;
+        padding: 60px 20px;
+        max-width: 1100px;
+        margin: 0 auto;
+        align-items: center;
+    }
+
+    .text {
+        font-size: 2rem;
+        margin-bottom: 20px;
+    }
+
+    .text p {
+        margin-bottom: 15px;
+    }
+
+    .about-image {
+        flex: 1 1 40%;
+    }
+
+    .about-image img {
+        width: 100%;
+        border-radius: 12px;
+        box-shadow: 0 10px 25px rgba(0, 0.2 , 0, 0.1);
+    }
+
+    .mission-values {
+        background: #f9f9f9;
+        padding: 60px 20px;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 40px;
+        text-align: center;
+    }
+
+    .mission-box {
+        flex: 1 1 300px;
+        max-width: 400px;
+        background: white;
+        border-radius: 12px;
+        padding: 30px 20px;
+        box-shadow: 0 8px 20px rgba(0.1, 0, 0, 0.05);
+    }
+
+    .mission-box h3 {
+        font-size: 1.4rem;
+        margin-bottom: 15px;
+    }
+
+    .mission-box ul {
+        list-style: none;
+        padding: 0;
+    }
+
+    .mission-box li::before {
+        content: "✓";
+        color: #f85c70;
+        margin-right: 8px;
+    }
+
+    .about-cta {
+        text-align: center;
+        padding: 60px 20px;
+        background: #f85c70;
+        color: white;
+    }
+
+    .about-cta h2 {
+        font-size: 2rem;
+        margin-bottom: 20px;
+    }
+
+    .about-btn {
+        background-color: white;
+        color: #f85c70;
+        padding: 14px 30px;
+        text-decoration: none;
+        border-radius: 30px;
+        font-weight: bold;
+        transition: 0.3s ease;
+    }
+
+    .about-btn:hover {
+        background-color: #ffe2e7;
+    }
+
+    .testimonial-prev {
+        background-color: #f9f9f9;
+        padding: 60px 20px;
+        text-align: center;
+    }
+
+    .testimonial-prev h2 {
+        font-size: 2rem;
+        margin-bottom: 30px;
+    }
+
+    .testimonial-card {
+        background: white;
+        max-width: 600px;
+        margin: 0 auto 20px;
+        padding: 20px 30px;
+        border-radius: 12px;
+        box-shadow: 0 6px 15px rgba(0, 0, 0, 0.05);
+        font-style: italic;
+    }
+
+    .testimonial-card span {
+        display: block;
+        margin-top: 10px;
+        font-weight: bold;
+        color: #f85c70;
+    }
+
+    .see-link {
+        display: inline-block;
+        margin-top: 20px;
+        color: #f85c70;
+        text-decoration: none;
+        font-weight: bold;
+    }
+
+    .see-link:hover {
+        text-decoration: underline;
+    }
+
+@media (max-width: 768px) {
+  .about-content {
+    flex-direction: column;
+  }
+
+  .text, .about-image {
+    flex: 1 1 100%;
+  }
+}
+
+</style>
+<body>
+    <nav class="navbar">
+        <h1 class="head">Estino <span>Beauty</span></h1>
+        <div class="hamburger" id="hamburger">
+            ☰
+        </div>
+        <ul class="nav-links" id="navLinks">
+            <li><a href="#home">Home</a></li>
+            <li><a href="booking.html">Booking</a></li>
+        </ul>
+    </nav>
+    <section class="about-hero" id="home">
+        <h1>About Us</h1>
+        <p>We believe beauty is confidence, and we're here to help you shine.</p>
+    </section>
+
+    <section class="about-content">
+        <div class="text">
+            <h2>Our Story</h2>
+            <p>
+                Founded with passion, our salon has become a trusted name in beauty. With years or experience
+                and a team of talented stylists, we specialize in delivering the best hair styling, braiding, and 
+                beauty treatments for all occasions.
+            </p>
+            <p>
+                Whether you're getting ready for a special event or just want to treat yourself, we create styles that reflect your personality and
+                boost your confidence.
+            </p>
+        </div>
+        <div class="about-image">
+            <img src="working pic.jpeg" alt="Salon team">
+        </div>
+    </section>
+
+    <section class="mission-values">
+        <div class="mission-box">
+            <h3>🎯 Our Mission</h3>
+            <p>To empower individuals by enhancing their natural beauty with care, creativity, and professionalism.</p>
+        </div>
+        <div class="mission-box">
+            <h3>💎 Our Values</h3>
+            <ul>
+                <li>Customer Satisfaction</li>
+                <li>Creativity & Innovation</li>
+                <li>Quality & Excellence</li>
+                <li>Respect & Teamwork</li>
+            </ul>
+        </div>
+    </section>
+
+    <section class="about-cta">
+        <h2>Let's Give You A New Look</h2>
+        <a href="booking.html" class="about-btn">Book an Appointment</a>
+    </section>
+
+    <section class="testimonial-prev">
+        <h2>What Our Clients Say</h2>
+        <div class="testimonial-card">
+            <p>“They are one of the best in the country. I love them!”</p>
+            <span>– Ninalowo</span>
+        </div>
+
+        <div class="testimonial-card">
+            <p>“This changed my life! The team was incredible.”</p>
+            <span>– Miss Blessing</span>
+        </div>
+
+        <a href="/#testimonials" class="see-link">Read More Testimonials</a>
+    </section>
+    
+</body>
+<Script>
+    window.addEventListener('scroll', function() {
+  const navbar = document.querySelector('.navbar');
+  if (window.scrollY > 50) { // Adjust threshold (50px)
+    navbar.classList.add('scrolled');
+  } else {
+    navbar.classList.remove('scrolled');
+  }
+});
+
+const hamburger = document.getElementById("hamburger");
+const navLinks = document.getElementById("navLinks");
+
+hamburger.addEventListener("click", () => {
+  navLinks.classList.toggle("show");
+});
+</Script>
+</html>
