@@ -38,7 +38,6 @@ span {
   color: white;
   cursor: pointer;
   display: none; /* Shown on small screens */
-  max-width: 1000px;
 }
 
 .navbar.scrolled {
@@ -92,16 +91,16 @@ nav ul {
 
 @keyframes slideShow {
   0%, 100% {
-    background-image: url('../hair-pics/pic1.jpeg');
+    background-image: url('pic1.jpeg');
   }
   25% {
-    background-image: url('../hair-pics/pic2.jpg');
+    background-image: url('pic2.jpg');
   }
   50% {
-    background-image: url('../hair-pics/pic3.jpg');
+    background-image: url('pic3.jpg');
   }
   75% {
-    background-image: url('../hair-pics/pic4.jpg');
+    background-image: url('pic4.jpg');
   }
 }
 
