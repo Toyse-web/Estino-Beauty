@@ -374,6 +374,160 @@ h2 {
   box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
 }
 
+.footer {
+  background-color: #111;
+  color: #f0f0f0;
+  padding: 60px 20px 20px;
+  font-size: 0.95rem;
+}
+
+.footer-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 40px;
+  max-width: 1200px;
+  margin: auto;
+}
+
+.footer-brand {
+  font-size: 1.8rem;
+  margin-bottom: 10px;
+}
+
+.footer-brand span {
+  color: #f85c70;
+  font-weight: 300;
+}
+
+.footer-brand p {
+  color: #ccc;
+  max-width: 280px;
+}
+
+.footer-links h3,
+.footer-contact h3 {
+  margin-bottom: 12px;
+  font-size: 1.2rem;
+}
+
+.footer-links ul {
+  list-style: none;
+  padding: 0;
+}
+
+.footer-links li {
+  margin-bottom: 8px;
+}
+
+.footer-links a {
+  color: #f0f0f0;
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+.footer-links a:hover {
+  color: #f85c70;
+}
+
+.footer-newsletter {
+  max-width: 300px;
+}
+
+.footer-newsletter h3 {
+  margin-bottom: 10px;
+  font-size: 1.2rem;
+}
+
+.footer-newsletter p {
+  font-size: 0.9rem;
+  color: #ccc;
+  margin-bottom: 15px;
+}
+
+.footer-newsletter form {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.footer-newsletter input[type="email"] {
+  flex: 1;
+  padding: 10px;
+  border-radius: 4px;
+  border: none;
+  outline: none;
+  font-size: 0.95rem;
+}
+
+.footer-newsletter button {
+  padding: 10px 16px;
+  background-color: #f85c70;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.newsletter-popup {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  background-color: #f85c70;
+  color: white;
+  padding: 16px 24px;
+  border-radius: 8px;
+  font-weight: 500;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(20px);
+  transition: all 0.4s ease;
+  z-index: 9999;
+}
+
+/* This for javaScript visibility */
+.newsletter-popup.visible {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+.footer-newsletter button:hover {
+  background-color: #ff7188;
+}
+
+.footer-contact p {
+  margin: 5px 0;
+  columns: #ccc;
+}
+
+.socials {
+  margin-top: 12px;
+}
+
+.socials a {
+  font-size: 1.3rem;
+  margin-right: 12px;
+  text-decoration: none;
+  color: #f0f0f0;
+  transition: color 0.3s;
+}
+
+.socials a:hover {
+  color: #f85c70;
+}
+
+/* Buttom footer */
+.footer-bottom {
+  text-align: center;
+  padding: 20px 0 0;
+  font-size: 0.9rem;
+  color: #aaa;
+  border-top: 1px solid #333;
+}
+
 @media (max-width: 768px) {
   *{
     margin: 0;
@@ -441,5 +595,10 @@ h2 {
 
 .arrow {
   font-size: 18px;
+}
+
+.footer-container {
+  flex-direction: column;
+  align-items: flex-start;
 }
 }
