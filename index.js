@@ -1,4 +1,4 @@
-// Scroll animation
+// Scroll animation for navbar
 window.addEventListener('scroll', function() {
   const navbar = document.querySelector('.navbar');
   if (window.scrollY > 50) { // Adjust threshold (50px)
@@ -8,14 +8,29 @@ window.addEventListener('scroll', function() {
   }
 });
 
+// Show Hamburger for smaller screens
 const hamburger = document.getElementById("hamburger");
 const navLinks = document.getElementById("navLinks");
 
 hamburger.addEventListener("click", () => {
-  navLinks.classList.toggle("show");
+  navLinks.classList.toggle("show"); //Show nav links when hamburger clicked
 });
 
-// Scroll Animation
+// Newsletter
+const newsLetter = document.querySelector("#newsletterForm");
+const messagePopup = document.querySelector("#newsLetterPopup")
+newsLetter.addEventListener("submit", function(e) {
+  e.preventDefault();
+  // Show popup
+  messagePopup.classList.add("visible");
+  setTimeout(() => {
+    messagePopup.classList.remove("visible");
+  }, 3000);
+
+  newsLetter.reset();
+});
+
+// Show testimonials
 const testimonials = document.querySelectorAll(".testimonial");
 
 const testimonialObserve = new IntersectionObserver((enter) => {
@@ -70,7 +85,7 @@ function stopAutoSlide() {
   clearInterval(autoSlide);
 }
 
-// Handle hove to pause auto-slide
+// Handle hover to pause auto-slide
 carousel.addEventListener("mouseenter", () => {
   hovered = true;
 });
@@ -79,11 +94,12 @@ carousel.addEventListener("mouseleave", () => {
   hovered = false;
 });
 
-// Button click event
+// Button click event next slide
 nextBtn.addEventListener("click", () => {
   nextSlide();
 });
 
+// Button click event previous slide
 prevBtn.addEventListener("click", () => {
   prevSlide();
 });
